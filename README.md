@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+This code is a simple React component for a chatbot front-end that can be integrated into any web application. It allows users to input questions and receive answers from the chatbot.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## To run and use this code, follow these steps:
 
-## Available Scripts
+1. **Requirements:**
 
-In the project directory, you can run:
+   Make sure you have Node.js installed. If not, download and install Node.js from the official website: https://nodejs.org/en/download/
 
-### `npm start`
+2. **Create a new React project:**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+   Open a terminal (or command prompt) and run the following command to create a new React project:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   ```
+   npx create-react-app chatbot-app
+   ```
 
-### `npm test`
+   This will create a new folder called `chatbot-app` with a boilerplate React application.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. **Install required packages:**
 
-### `npm run build`
+   Change to the `chatbot-app` directory and install the required package, axios:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```
+   cd chatbot-app
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. **Add the ChatBot component:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   Replace the contents of the `src/App.js` file with the provided ChatBot component code. Don't forget to import the required CSS file for styling (you can create your own or modify the existing `App.css` file).
 
-### `npm run eject`
+5. **Run the React app:**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   In the terminal, run the following command to start the React development server:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```
+   npm start
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   This will open a new browser window with your chatbot front-end running at http://localhost:3000.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+6. **Connect the front-end to the chatbot server:**
 
-## Learn More
+   To connect your React app to the chatbot server created in the previous example, update the axios post request URL in the `onSubmit` function:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```
+   const response = await axios.post("http://127.0.0.1:5000/chatbot", {
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   Make sure both the React app and the Flask server are running.
 
-### Code Splitting
+**Code explanation:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Import necessary packages: `React` for creating the component, `useState` for managing state, and `axios` for making API requests.
 
-### Analyzing the Bundle Size
+- Create a functional component `ChatBot` that maintains state for user input (`inputVal`), questions (`questions`), and answers (`answers`).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Define an `onSubmit` function that sends the user's input to the chatbot server using an axios POST request and updates the state with the received response.
 
-### Making a Progressive Web App
+- Define an `onChange` function that updates the state when the user types in the input field.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Define a `pressEnter` function that triggers the `onSubmit` function when the user presses the Enter key.
 
-### Advanced Configuration
+- Render the chatbot UI, displaying the user's questions and the chatbot's answers. The input field and send button allow users to interact with the chatbot.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Export the `ChatBot` component for use in other parts of the application.
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Note:**
+Make sure to add necessary styles for the chatbot UI in the `src/App.css` file. The classes used in the component code (e.g., `wrapper`, `title`, `box`, etc.) should be styled accordingly.
