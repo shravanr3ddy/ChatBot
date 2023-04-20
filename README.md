@@ -2,6 +2,9 @@ This code is a simple React component for a chatbot front-end that can be integr
 
 
 
+https://user-images.githubusercontent.com/90720113/233291893-6ba9e404-6886-49e4-9b53-7ea8f824510d.mov
+
+
 
 ## To run and use this code, follow these steps:
 
