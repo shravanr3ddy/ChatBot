@@ -1,5 +1,3 @@
-This code is a simple React component for a chatbot front-end that can be integrated into any web application. It allows users to input questions and receive answers from the chatbot.
-
 
 
 
@@ -7,6 +5,9 @@ This code is a simple React component for a chatbot front-end that can be integr
 https://user-images.githubusercontent.com/90720113/233292601-e2794eed-b254-4b6b-8d76-e20f36956997.mov
 
 
+
+
+This code is a simple React component for a chatbot front-end that can be integrated into any web application. It allows users to input questions and receive answers from the chatbot.
 
 
 ## To run and use this code, follow these steps:
